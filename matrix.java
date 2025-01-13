@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import java.util.Random();
+import java.util.Random;
 
 
 
@@ -22,13 +22,26 @@ public class Matrix{
                 goodNum = true;
             }
         
-            int [][] randomMatrix = new int[dimensions][dimensions];
 
         }
-   
+
+
+        
+    }
+
+    public static int[][] randomMatrixGenerator(int dimensions,int dimensions){
+        int [][] randomMatrix1 = new int[dimensions][dimensions];
+        int [][] randomMatrix2 = new int[dimensions][dimensions];
+        Random random = new Random();
+        for (int i=0; i < dimensions; i++){
+            for (int j=0; j<dimensions;j++){
+                randomMatrix1[i][j] = random.nextInt(dimensions);
+                randomMatrix2[i][j] = random.nextInt(dimensions);
+            }
+        }
+        
     }
 
     
-    
+}  
 
-}
