@@ -36,8 +36,23 @@ public class Matrix{
             System.out.println();
             System.out.println();
 
+                    // Initialize the first 3x3 matrix
+        int[][] testMatrix1 = {
+            {1, 2, 0},
+            {0, 1, 2},
+            {2, 0, 1}
+        };
+
+        // Initialize the second 3x3 matrix
+        int[][] testMatrix2 = {
+            {2, 1, 0},
+            {1, 0, 2},
+            {0, 2, 1}
+        };
+
             System.out.println("Result Matrix is as follows:");
-            printMatrix((multiplyMatrix(rndMatrix1,rndMatrix2)));
+            // printMatrix((multiplyMatrix(rndMatrix1,rndMatrix2)));
+            printMatrix((multiplyMatrix(testMatrix1,testMatrix2)));
             
         }
 
@@ -58,9 +73,28 @@ public class Matrix{
 
     public static int [][] multiplyMatrix(int [][] matrix1, int [][] matrix2){
         int[][] lastMatrix= new int[matrix1.length][matrix2.length];
-        for (int i = 0; i<matrix1.length; i++){
-            for (int j = 0; j<matrix1.length-1; j++){
-                lastMatrix[i][j]= matrix1[i][j]*matrix2[i][j];
+       
+        for (int m = 0; m<matrix1.length; m++){
+            for (int i = 0; i<matrix1.length; i++){
+                for (int j = 0; j<matrix1.length; j++){
+                    // System.out.println(i+ "and" +j +"|" + matrix1[i][j] +"and"+matrix2[j][i]);
+                    lastMatrix[m][i] += matrix1[m][j]*matrix2[j][i];
+                /*
+                 *
+                11 * 11  mi
+                12 * 21
+                13 * 31
+
+                11 * 12
+                12 * 22
+                13 * 32
+
+                11 * 13
+                12 * 23
+                13 * 33
+                 */
+
+                }
             }
         }
         return lastMatrix;
