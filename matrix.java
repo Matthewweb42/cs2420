@@ -72,7 +72,7 @@ public class matrix{
         Random random = new Random();
         for (int i=0; i < dimensions; i++){
             for (int j=0; j<dimensions;j++){
-                randomMatrix1[i][j] = random.nextInt(50);
+                randomMatrix1[i][j] = random.nextInt(51);
             }
         }
         return randomMatrix1;
