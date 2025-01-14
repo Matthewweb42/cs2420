@@ -1,4 +1,6 @@
 import java.util.Scanner;
+
+
 import java.util.Random;
 
 
@@ -21,27 +23,58 @@ public class Matrix{
             else{
                 goodNum = true;
             }
-        
+            System.out.println("Matrix 1 is as follows:");
+            int [][] rndMatrix1 = randomMatrixGenerator(dimensions);
+            printMatrix(rndMatrix1);
+            System.out.println();
 
+            System.out.println();
+            System.out.println("Matrix 2 is as follows:");
+            int [][] rndMatrix2 = randomMatrixGenerator(dimensions);
+            printMatrix(rndMatrix2);
+
+            
         }
 
 
         
     }
-
-    public static int[][] randomMatrixGenerator(int dimensions,int dimensions){
+    
+    public static int[][] randomMatrixGenerator(int dimensions){
         int [][] randomMatrix1 = new int[dimensions][dimensions];
-        int [][] randomMatrix2 = new int[dimensions][dimensions];
         Random random = new Random();
         for (int i=0; i < dimensions; i++){
             for (int j=0; j<dimensions;j++){
-                randomMatrix1[i][j] = random.nextInt(dimensions);
-                randomMatrix2[i][j] = random.nextInt(dimensions);
+                randomMatrix1[i][j] = random.nextInt(50);
             }
         }
-        
+        return randomMatrix1;
     }
 
-    
+    public static int [][] multiplyMatrix(int [][] matrix1, int [][] matrix2){
+        return new int[1][1];
+    }
+
+    public static void printMatrix(int [][]matrix){
+        System.out.print("[");
+        for (int i = 0; i < matrix.length; i++){
+            System.out.print("[");
+            for (int j = 0; j < matrix.length; j++){
+                if (j == matrix.length-1){
+                    System.out.print(matrix[i][j]); 
+                }else{
+                    System.out.print(matrix[i][j]+", ");
+                }
+            }
+            if (i == matrix.length-1){
+                System.out.print("]");
+
+            }else{
+                System.out.println("],");
+            }
+        }
+        System.out.print("]");
+
+    }
 }  
 
