@@ -33,6 +33,11 @@ public class Matrix{
             int [][] rndMatrix2 = randomMatrixGenerator(dimensions);
             printMatrix(rndMatrix2);
 
+            System.out.println();
+            System.out.println();
+
+            System.out.println("Result Matrix is as follows:");
+            printMatrix((multiplyMatrix(rndMatrix1,rndMatrix2)));
             
         }
 
@@ -45,14 +50,20 @@ public class Matrix{
         Random random = new Random();
         for (int i=0; i < dimensions; i++){
             for (int j=0; j<dimensions;j++){
-                randomMatrix1[i][j] = random.nextInt(50);
+                randomMatrix1[i][j] = random.nextInt(4);
             }
         }
         return randomMatrix1;
     }
 
     public static int [][] multiplyMatrix(int [][] matrix1, int [][] matrix2){
-        return new int[1][1];
+        int[][] lastMatrix= new int[matrix1.length][matrix2.length];
+        for (int i = 0; i<matrix1.length; i++){
+            for (int j = 0; j<matrix1.length-1; j++){
+                lastMatrix[i][j]= matrix1[i][j]*matrix2[i][j];
+            }
+        }
+        return lastMatrix;
     }
 
     public static void printMatrix(int [][]matrix){
