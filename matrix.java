@@ -1,10 +1,9 @@
 import java.util.Scanner;
 import java.time.Instant;
+import java.time.Duration;
 import java.util.Random;
 
-
-
-public class Matrix{
+public class matrix{
     public static void main(String[] args) {
         
     
@@ -49,21 +48,23 @@ public class Matrix{
                 
                 System.out.println();
                 System.out.println();
+                Duration duration = Duration.between(startTime, endTime);
+                System.out.println("Total execution time: " + duration.toMillis()+"ms");
+                System.out.println();
+           
+
                 System.out.println("Would you like to continue? y/n");
                 String repeat = scanner.next();
-                if (repeat.equals("y")){
-
+                if (repeat.equals("y")){ //continue check
+ 
                     finished = false;
                     goodNum = false;
                 }else{
                     finished = true;
                 }
-                
-                System.out.println("Total execution time was : " + String(startTime-endTime));
                 } 
             }
         }
-
     }
     
     public static int[][] randomMatrixGenerator(int dimensions){ //simple random number generator. 
@@ -83,7 +84,6 @@ public class Matrix{
             for (int j = 0; j<matrix1.length; j++){ //column iteration
                 for (int k = 0; k<matrix1.length; k++){ // digit iteration
                     lastMatrix[i][j] += matrix1[i][k]*matrix2[k][j]; //calculation
-  
                 }
             }
         }
