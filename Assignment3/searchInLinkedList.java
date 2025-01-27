@@ -69,7 +69,7 @@ public class searchInLinkedList {
 
         //print results
         if (found){
-            System.out.println("Key has been found!");
+            System.out.println("The Key is in the List!");
         }else{
             System.out.println("Key does not exist!");
         }
