@@ -3,17 +3,17 @@ import java.util.Scanner;
 
 public class queueUsingTwoStacks {
 
-   private static class Node{// create the array for the first stack.
+   private static class Node{//initilize data and node next
        int data;
        Node next;
 
-       public Node(int data){// set up the stack function.
+       public Node(int data){
            this.data = data;
            this.next = null;
 
        }
    }
-    private static class Stack{
+    private static class Stack{// set up the stack function and it's various operations.
        private Node top;
 
        public Stack(){
@@ -51,7 +51,7 @@ public class queueUsingTwoStacks {
 
     private Stack stack1;
     private Stack stack2;
-    public queueUsingTwoStacks(){
+    public queueUsingTwoStacks(){//create the stacks
         stack1 = new Stack();
         stack2 = new Stack();
     }
@@ -76,10 +76,10 @@ public class queueUsingTwoStacks {
 
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) {//main running function
         queueUsingTwoStacks queue = new queueUsingTwoStacks();
         Scanner scanner = new Scanner(System.in);
-        boolean exit = false;
+        boolean exit = false; //formating output and calling needed functions. 
         while (!exit) {
             System.out.println("Press 1 for enqueue. Press 2 for dequeue. Press 0 to exit");
             int choice = scanner.nextInt();
