@@ -4383,3 +4383,116 @@ public class queueUsingTwoStacks {
 "File.Edit","","    ","292","1738001578502","queueUsingTwoStacks.java","1.1.5 for 2021-2022 @t1","Delete",,,,,,
 "File.Edit","","    ","228","1738001578504","queueUsingTwoStacks.java","1.1.5 for 2021-2022 @t1","Delete",,,,,,
 "File.Edit","","        ","213","1738001578505","queueUsingTwoStacks.java","1.1.5 for 2021-2022 @t1","Delete",,,,,,
+"X-Action","Reload From Disk",,,"1738026834878","queueUsingTwoStacks.java","1.1.5 for 2021-2022 @t1",,"Reload From Disk",,,,,
+"File.Edit","","Key has been found","2017","1738026834882","searchInLinkedList.java","1.1.5 for 2021-2022 @t1","Delete",,,,,,
+"File.Edit","The Key is in the List","","2017","1738026834883","searchInLinkedList.java","1.1.5 for 2021-2022 @t1","Insert",,,,,,
+"X-Action","Reload From Disk",,,"1738026834886","queueUsingTwoStacks.java","1.1.5 for 2021-2022 @t1",,"Reload From Disk",,,,,
+"File.Edit","","tack;","18","1738026834890","queueUsingTwoStacks.java","1.1.5 for 2021-2022 @t1","Delete",,,,,,
+"File.Edit","canner;
+","","18","1738026834891","queueUsingTwoStacks.java","1.1.5 for 2021-2022 @t1","Insert",,,,,,
+"File.Edit","","    public static void main(String[] args) {
+        Stack<Integer> stack1 = new Stack<Integer>();","63","1738026834890","queueUsingTwoStacks.java","1.1.5 for 2021-2022 @t1","Delete",,,,,,
+"File.Edit","
+   private static class Node{// create the array for the first stack.
+       int data;
+       Node next;
+
+       public Node(int data){// set up the stack function.
+           this.data = data;
+           this.next = null;
+
+       }
+   }
+    private static class Stack{
+       private Node top;
+
+       public Stack(){
+           top = null;
+       }
+
+       public void push(int data){
+           Node newNode = new Node(data);
+           if(top == null){
+               top = newNode;
+           }else{
+               newNode.next = top;
+               top = newNode;
+           }
+       }
+       public int pop(){
+           int data = top.data;
+           top = top.next;
+           return data;
+       }
+       public boolean isEmpty(){
+           return top == null;
+       }
+
+       public void printStacks(String stack){
+            Node current = top;
+            while(current != null){
+                System.out.print(current.data + "" "");
+                current = current.next;
+            }
+           System.out.println();
+        }
+    }
+
+
+    private Stack stack1;
+    private Stack stack2;
+    public queueUsingTwoStacks(){","","63","1738026834891","queueUsingTwoStacks.java","1.1.5 for 2021-2022 @t1","Insert",,,,,,
+"File.Edit","","S","1214","1738026834890","queueUsingTwoStacks.java","1.1.5 for 2021-2022 @t1","Delete",,,,,,
+"File.Edit","s","","1214","1738026834891","queueUsingTwoStacks.java","1.1.5 for 2021-2022 @t1","Insert",,,,,,
+"File.Edit","","<Integer> stack2 = new Stack<Integer>();
+","1219","1738026834892","queueUsingTwoStacks.java","1.1.5 for 2021-2022 @t1","Delete",,,,,,
+"File.Edit","1 = new Stack();
+        stack2 = new Stack();
+    }
+
+
+    public void enqueue(int value) {
+        stack1.push(value);
+
+    }
+
+    public int dequeue() {
+        while(!stack1.isEmpty()){
+            stack2.push(stack1.pop());
+        }
+        return stack2.pop();
+    }
+
+    public void printStacks() {
+        stack1.printStacks(""Stack1"");
+        stack2.printStacks(""Stack2"");","","1219","1738026834893","queueUsingTwoStacks.java","1.1.5 for 2021-2022 @t1","Insert",,,,,,
+"File.Edit","
+
+","","1608","1738026834890","queueUsingTwoStacks.java","1.1.5 for 2021-2022 @t1","Insert",,,,,,
+"File.Edit","","int enqueue(int item) {
+        return 0;
+    }
+
+    public int dequeue() {
+        return 0;","1621","1738026834890","queueUsingTwoStacks.java","1.1.5 for 2021-2022 @t1","Delete",,,,,,
+"File.Edit","static void main(String[] args) {
+        queueUsingTwoStacks queue = new queueUsingTwoStacks();
+        Scanner scanner = new Scanner(System.in);
+        boolean exit = false;
+        while (!exit) {
+            System.out.println(""Press 1 for enqueue. Press 2 for dequeue. Press 0 to exit"");
+            int choice = scanner.nextInt();
+            if (choice == 1) {
+                System.out.println(""Please input the number you would like to Enqueue: "");
+                int data = scanner.nextInt();
+                queue.enqueue(data);
+                queue.printStacks();
+            }else if(choice == 2){
+                queue.dequeue();
+                queue.printStacks();
+            }else if(choice == 0){
+                System.out.println(""Exiting..."");
+                exit = true;
+            }
+        }
+","","1621","1738026834891","queueUsingTwoStacks.java","1.1.5 for 2021-2022 @t1","Insert",,,,,,
